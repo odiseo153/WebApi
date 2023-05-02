@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kpARIGlEg2BWWMFNvagOk0L2rfGggbA9jJ0ZGIwcHSuYkWRdZ5a/hx/JNqqguF9Crc0F9ph1a1fG7cVsyl74Ww==",
+  "dgSpecHash": "pZgv7lvbWu8RTfkaG52VDFZX4C+CaFIzn+Px7aaSgxNjuzogHm+fXaQaO/GDm+3HAuwnaS70YwfuG5MK2FFTzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emerido Rincon\\Desktop\\Api\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Emerido Rincon\\Desktop\\Api\\Api\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emerido Rincon\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Emerido Rincon\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

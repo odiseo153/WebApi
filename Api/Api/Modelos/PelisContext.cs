@@ -7,6 +7,8 @@ namespace Api.Modelos
 {
     public partial class PelisContext : DbContext
     {
+
+        //clase contexto para la conexcion y uso de la base de datos
         public PelisContext()
         {
         }
@@ -16,6 +18,7 @@ namespace Api.Modelos
         {
         }
 
+        //Representacion a modo de Clase a la Tabla Movie
         public virtual DbSet<Movie> Movies { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

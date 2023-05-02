@@ -4,13 +4,13 @@ using Newtonsoft.Json.Linq;
 
 namespace AppApi
 {
-    public class Json
+    public class JSON
     {
-       
+       //en caso de que no tenga la base de datos puede usar los datos que estan en Pelis.json
 
         public static string Post(List<Movie> pelis1)
         {
-            string ruta = $"C:\\Users\\{Environment.UserName}\\Desktop\\Pelis.json";
+            string ruta = $"Pelis.json";
             string mensaje = "datos guardados";
 
             if (pelis1 == null)
@@ -61,11 +61,11 @@ namespace AppApi
 
         public static dynamic Put(int id, Movie cliente)
         {
-            string url = $"C:\\Users\\{Environment.UserName}\\Desktop\\Pelis.json";
+            string ruta = $"Pelis.json";
 
             string mensaje = "El Cliente no se encontro";
 
-            string json = System.IO.File.ReadAllText(url);
+            string json = System.IO.File.ReadAllText(ruta);
             JArray arrayObjetos = JsonConvert.DeserializeObject<JArray>(json);
 
             JToken objetoBuscado = null;
@@ -89,18 +89,18 @@ namespace AppApi
 
 
             string jsonModificado = JsonConvert.SerializeObject(arrayObjetos);
-            System.IO.File.WriteAllText(url, jsonModificado);
+            System.IO.File.WriteAllText(ruta, jsonModificado);
 
             return mensaje;
         }
 
         public static dynamic DeleteId(int id)
         {
-            string url = $"C:\\Users\\{Environment.UserName}\\Desktop\\Pelis.json";
+            string ruta = $"Pelis.json";
 
             string mensaje = "El Cliente no se encontro";
 
-            string json = System.IO.File.ReadAllText(url);
+            string json = System.IO.File.ReadAllText(ruta);
             JArray arrayObjetos = JsonConvert.DeserializeObject<JArray>(json);
 
             JToken objetoBuscado = null;
@@ -121,7 +121,7 @@ namespace AppApi
             }
 
             string jsonModificado = JsonConvert.SerializeObject(arrayObjetos);
-            System.IO.File.WriteAllText(url, jsonModificado);
+            System.IO.File.WriteAllText(ruta, jsonModificado);
 
 
             return mensaje;
@@ -132,7 +132,7 @@ namespace AppApi
         public static List<Movie> Get()
         {
 
-            string ruta = $"C:\\Users\\{Environment.UserName}\\Desktop\\Pelis.json";
+            string ruta = $"Pelis.json";
 
             if (System.IO.File.Exists(ruta))
             {

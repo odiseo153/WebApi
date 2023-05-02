@@ -7,16 +7,21 @@ namespace AppApi.Controllers
 {
     public class EntityController : Controller
     {
+
         public PelisContext context { get;}
         public EntityController(PelisContext peli) 
         {
         
             context = peli;
+           
         }
 
         [HttpGet("Get")]
         public ActionResult Get()
         {
+            
+            
+            //obtener datos de la base de datos
             return Ok(context.Movies.ToList());
         }
 
@@ -24,6 +29,7 @@ namespace AppApi.Controllers
         [HttpGet("Get/{id}")]
         public ActionResult GetId(int id)
         {
+            //obtener datos de la base de datos mediante Id
 
             var mensaje ="No se encontro Pelicula con este Id: " + id;
             try
@@ -49,6 +55,8 @@ namespace AppApi.Controllers
         [HttpPost("Save")]
         public ActionResult Post(Movie pelis)
         {
+
+            //guardando los datos que mande el usuario en la base de datos
             string mensaje = "Pelicula Guardada con exito";
 
        
@@ -83,8 +91,12 @@ namespace AppApi.Controllers
 
 
         [HttpPut("Update")]
+
+        //actualizando la pelicula mediante el id del objeto peli
         public ActionResult Put(Movie peli)
         {
+
+            //mensaje por defecto
             string mensaje = "La pelicula no se encontro";
             var tabla1 = context.Movies.ToList();
             
@@ -93,11 +105,13 @@ namespace AppApi.Controllers
 
             for (int i = 0; i < tabla1.Count; i++)
             {
-
+                //si una pelicula con ese id existe se actualiza
                 if (tabla1[i].Id == peli.Id)
                 {
+                    //en caso de que mande valores null, los datos anteriores permaneceran
 
                     tabla1[i].Titulo = peli.Titulo == null ? tabla1[i].Titulo : peli.Titulo;
+                    tabla1[i].Descripcion = peli.Descripcion == null ? tabla1[i].Descripcion : peli.Descripcion;
                     tabla1[i].Fecha = peli.Fecha == null ? tabla1[i].Fecha : peli.Fecha;
                     tabla1[i].Imagen = peli.Imagen == null ? tabla1[i].Imagen : peli.Imagen;
 
